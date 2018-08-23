@@ -15,6 +15,7 @@
 		9158604B212F444600EC13C0 /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604A212F444600EC13C0 /* ImportViewController.swift */; };
 		9158604D212F480F00EC13C0 /* ImportViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604C212F480F00EC13C0 /* ImportViewControllerDelegate.swift */; };
 		9158604F212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604E212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift */; };
+		91586051212F73CD00EC13C0 /* MainViewController+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91586050212F73CD00EC13C0 /* MainViewController+Realm.swift */; };
 		91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29EE212E1D5200947590 /* AppDelegate.swift */; };
 		91AC29F1212E1D5200947590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29F0212E1D5200947590 /* ViewController.swift */; };
 		91AC29F4212E1D5200947590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AC29F2212E1D5200947590 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		9158604A212F444600EC13C0 /* ImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewController.swift; sourceTree = "<group>"; };
 		9158604C212F480F00EC13C0 /* ImportViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9158604E212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImportViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		91586050212F73CD00EC13C0 /* MainViewController+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Realm.swift"; sourceTree = "<group>"; };
 		91AC29EB212E1D5200947590 /* SpeedReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AC29EE212E1D5200947590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AC29F0212E1D5200947590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				91AC29EE212E1D5200947590 /* AppDelegate.swift */,
 				91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */,
 				A1FC3467212E5DD1006DA973 /* MainViewController.swift */,
+				91586050212F73CD00EC13C0 /* MainViewController+Realm.swift */,
 				A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */,
 				910F96C8212E888B00CDF29A /* String+filterCharacters.swift */,
 				91AC2A1E212E207D00947590 /* Settings.swift */,
@@ -415,6 +418,7 @@
 			files = (
 				9158604F212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift in Sources */,
 				91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */,
+				91586051212F73CD00EC13C0 /* MainViewController+Realm.swift in Sources */,
 				91AC29F1212E1D5200947590 /* ViewController.swift in Sources */,
 				9158604D212F480F00EC13C0 /* ImportViewControllerDelegate.swift in Sources */,
 				91AC2A1F212E207D00947590 /* Settings.swift in Sources */,

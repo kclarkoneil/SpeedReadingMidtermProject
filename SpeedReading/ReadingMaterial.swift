@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ReadingMaterial: NSObject {
-  var title: String
-  var body: String
+class ReadingMaterial: Object {
+  @objc dynamic var title: String = ""
+  @objc dynamic var body: String = ""
   var wordArray: [String] = [String]()
-  var currentPosition: Int = 0
-  var createdDate: Date
-  var lastReadDate: Date?
+  @objc dynamic var currentPosition: Int = 0
+  @objc dynamic var createdDate: Date = Date()
+  @objc dynamic var lastReadDate: Date? = nil
   
-  init(title: String, body: String) {
+  convenience init(title: String, body: String) {
+    self.init()
     self.title = title
     self.body = body
     self.createdDate = Date()
+    rebuildWordArray()
+  }
+  
+  
+  func rebuildWordArray(){
     let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,"))
     wordArray = filteredString.components(separatedBy: " ")
   }

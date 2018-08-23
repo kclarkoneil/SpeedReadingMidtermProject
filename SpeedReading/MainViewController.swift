@@ -22,29 +22,41 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         self.currentMaterial = [ReadingMaterial]()
-self.YourLibraryLabel.text = "Your Library"
+        self.YourLibraryLabel.text = "Your Library"
         self.ReadingMaterialTableView.delegate = self
         self.ReadingMaterialTableView.dataSource = self
-        
+      
+      
         //Sample material
-        
-        let essay = ReadingMaterial.init(title: "myEssay", body: "asdkfja;lskjdf;lakjsd;lkfja;slkd")
-        self.currentMaterial.append(essay)
-        
-        let coolStory = ReadingMaterial.init(title: "thatsAStory", body: "whooooo")
-        self.currentMaterial.append(coolStory)
-        
-        let bennetsStory = ReadingMaterial.init(title: "BennetsLife", body: "amazing")
-        self.currentMaterial.append(bennetsStory)
-        
-        let kitsStory = ReadingMaterial.init(title: "KitsLife", body: "prettyCool")
-        self.currentMaterial.append(kitsStory)
-        
-        
+        realmRead()
+      
+        //setupSampleData()
         // Do any additional setup after loading the view.
     
-   
     }
+  
+  
+  func setupSampleData() {
+    
+    let essay = ReadingMaterial.init(title: "myEssay", body: "asdkfja;lskjdf;lakjsd;lkfja;slkd")
+    self.currentMaterial.append(essay)
+    
+    let coolStory = ReadingMaterial.init(title: "thatsAStory", body: "whooooo")
+    self.currentMaterial.append(coolStory)
+    
+    let bennetsStory = ReadingMaterial.init(title: "BennetsLife", body: "amazing")
+    self.currentMaterial.append(bennetsStory)
+    
+    let kitsStory = ReadingMaterial.init(title: "KitsLife", body: "prettyCool")
+    self.currentMaterial.append(kitsStory)
+    writeReadingMaterial(reading: essay)
+    writeReadingMaterial(reading: coolStory)
+    writeReadingMaterial(reading: bennetsStory)
+    writeReadingMaterial(reading: kitsStory)
+    
+  }
+  
+  // Mark: UITableDataSourceDelegate functions
     
     func tableView(_ tableView:UITableView, cellForRowAt: IndexPath) -> UITableViewCell {
         let cell:MainTableViewCell = self.ReadingMaterialTableView.dequeueReusableCell(withIdentifier: "mainReuseCell", for: cellForRowAt) as! MainTableViewCell
