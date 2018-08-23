@@ -38,7 +38,7 @@ class ViewController: UIViewController {
   func runTimer() {
      let interval = 60.0 / Double(settings.WPM)
     print ("Interval is \(interval)")
-     wordTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(updateWordLabel), userInfo: nil, repeats: true)
+     wordTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(forwardPressed(_:)), userInfo: nil, repeats: true)
   }
   
   @objc func updateWordLabel(){
@@ -46,7 +46,6 @@ class ViewController: UIViewController {
     if let word = readingMaterial?.getCurrentWord() {
       DispatchQueue.main.async {
         self.wordLabel.text = word
-        self.readingMaterial?.nextWord()
       }
     }
   
@@ -73,7 +72,8 @@ class ViewController: UIViewController {
       wordTimer?.invalidate()
       playButton.setTitle("Play", for: .normal)
     }
-    
+    forwardButton.isEnabled = !reading
+    backwardButton.isEnabled = !reading
   }
 }
 

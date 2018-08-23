@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910F96C9212E888B00CDF29A /* String+filterCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F96C8212E888B00CDF29A /* String+filterCharacters.swift */; };
+		910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */; };
 		91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29EE212E1D5200947590 /* AppDelegate.swift */; };
 		91AC29F1212E1D5200947590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29F0212E1D5200947590 /* ViewController.swift */; };
 		91AC29F4212E1D5200947590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AC29F2212E1D5200947590 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		910F96C8212E888B00CDF29A /* String+filterCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+filterCharacters.swift"; sourceTree = "<group>"; };
+		910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadingStoryboard.storyboard; sourceTree = "<group>"; };
 		91AC29EB212E1D5200947590 /* SpeedReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AC29EE212E1D5200947590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AC29F0212E1D5200947590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,12 +112,14 @@
 				91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */,
 				A1FC3467212E5DD1006DA973 /* MainViewController.swift */,
 				A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */,
+				910F96C8212E888B00CDF29A /* String+filterCharacters.swift */,
 				91AC2A1E212E207D00947590 /* Settings.swift */,
 				91AC29F0212E1D5200947590 /* ViewController.swift */,
 				91AC29F2212E1D5200947590 /* Main.storyboard */,
 				91AC29F5212E1D5400947590 /* Assets.xcassets */,
 				91AC29F7212E1D5400947590 /* LaunchScreen.storyboard */,
 				91AC29FA212E1D5400947590 /* Info.plist */,
+				910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */,
 				91AC2A02212E1D5400947590 /* SpeedReadingTests */,
 			);
 			path = SpeedReading;
@@ -243,6 +249,7 @@
 			files = (
 				91AC29F9212E1D5400947590 /* LaunchScreen.storyboard in Resources */,
 				91AC29F6212E1D5400947590 /* Assets.xcassets in Resources */,
+				910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */,
 				91AC29F4212E1D5200947590 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +281,7 @@
 				A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */,
 				91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */,
 				A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */,
+				910F96C9212E888B00CDF29A /* String+filterCharacters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

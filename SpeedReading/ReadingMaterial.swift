@@ -20,7 +20,8 @@ class ReadingMaterial: NSObject {
     self.title = title
     self.body = body
     self.createdDate = Date()
-    wordArray = body.components(separatedBy: " ")
+    let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,"))
+    wordArray = filteredString.components(separatedBy: " ")
   }
   
   func getCurrentWord() -> String? {
