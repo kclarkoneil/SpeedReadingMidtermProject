@@ -11,6 +11,10 @@
 		4E57E021BE7500253EAEBAFB /* Pods_SpeedReadingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0F42EEA30149935C7EE5EC /* Pods_SpeedReadingTests.framework */; };
 		910F96C9212E888B00CDF29A /* String+filterCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F96C8212E888B00CDF29A /* String+filterCharacters.swift */; };
 		910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */; };
+		91586049212F409400EC13C0 /* ImportStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91586048212F409400EC13C0 /* ImportStoryboard.storyboard */; };
+		9158604B212F444600EC13C0 /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604A212F444600EC13C0 /* ImportViewController.swift */; };
+		9158604D212F480F00EC13C0 /* ImportViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604C212F480F00EC13C0 /* ImportViewControllerDelegate.swift */; };
+		9158604F212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9158604E212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift */; };
 		91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29EE212E1D5200947590 /* AppDelegate.swift */; };
 		91AC29F1212E1D5200947590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC29F0212E1D5200947590 /* ViewController.swift */; };
 		91AC29F4212E1D5200947590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AC29F2212E1D5200947590 /* Main.storyboard */; };
@@ -46,6 +50,10 @@
 		885C7358BEA4454684511A61 /* Pods-SpeedReading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReading.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReading/Pods-SpeedReading.release.xcconfig"; sourceTree = "<group>"; };
 		910F96C8212E888B00CDF29A /* String+filterCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+filterCharacters.swift"; sourceTree = "<group>"; };
 		910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadingStoryboard.storyboard; sourceTree = "<group>"; };
+		91586048212F409400EC13C0 /* ImportStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImportStoryboard.storyboard; sourceTree = "<group>"; };
+		9158604A212F444600EC13C0 /* ImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewController.swift; sourceTree = "<group>"; };
+		9158604C212F480F00EC13C0 /* ImportViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewControllerDelegate.swift; sourceTree = "<group>"; };
+		9158604E212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImportViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		91AC29EB212E1D5200947590 /* SpeedReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AC29EE212E1D5200947590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AC29F0212E1D5200947590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +139,10 @@
 				A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */,
 				910F96C8212E888B00CDF29A /* String+filterCharacters.swift */,
 				91AC2A1E212E207D00947590 /* Settings.swift */,
+				91586048212F409400EC13C0 /* ImportStoryboard.storyboard */,
+				9158604A212F444600EC13C0 /* ImportViewController.swift */,
+				9158604E212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift */,
+				9158604C212F480F00EC13C0 /* ImportViewControllerDelegate.swift */,
 				91AC29F0212E1D5200947590 /* ViewController.swift */,
 				91AC29F2212E1D5200947590 /* Main.storyboard */,
 				91AC29F5212E1D5400947590 /* Assets.xcassets */,
@@ -295,6 +307,7 @@
 				91AC29F6212E1D5400947590 /* Assets.xcassets in Resources */,
 				910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */,
 				91AC29F4212E1D5200947590 /* Main.storyboard in Resources */,
+				91586049212F409400EC13C0 /* ImportStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,15 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReadingTests-checkManifestLockResult.txt",
 			);
@@ -342,15 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReadingUITests-checkManifestLockResult.txt",
 			);
@@ -364,15 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReading-checkManifestLockResult.txt",
 			);
@@ -386,8 +387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedReading/Pods-SpeedReading-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
@@ -396,8 +395,6 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
@@ -416,13 +413,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9158604F212F611A00EC13C0 /* ImportViewController+TextFieldDelegate.swift in Sources */,
 				91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */,
 				91AC29F1212E1D5200947590 /* ViewController.swift in Sources */,
+				9158604D212F480F00EC13C0 /* ImportViewControllerDelegate.swift in Sources */,
 				91AC2A1F212E207D00947590 /* Settings.swift in Sources */,
 				A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */,
 				91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */,
 				A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */,
 				910F96C9212E888B00CDF29A /* String+filterCharacters.swift in Sources */,
+				9158604B212F444600EC13C0 /* ImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

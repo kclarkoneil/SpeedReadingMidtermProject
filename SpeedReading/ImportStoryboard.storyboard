@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oe0-P8-bU3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Import View Controller-->
+        <scene sceneID="sfX-8N-vkJ">
+            <objects>
+                <viewController id="oe0-P8-bU3" customClass="ImportViewController" customModule="SpeedReading" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lzh-r6-0jj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nl-BA-L7S">
+                                <rect key="frame" x="20" y="50" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v8l-OO-FHy">
+                                <rect key="frame" x="0.0" y="105" width="375" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-tQ-inM" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="20" y="618" width="54" height="34"/>
+                                <state key="normal" title="Import">
+                                    <color key="titleColor" red="0.41415915623747568" green="0.48994529881228266" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="importPDF:" destination="oe0-P8-bU3" eventType="touchUpInside" id="yTd-7x-rC7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-fC-ebo" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="315" y="618" width="40" height="34"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.41415915619999999" green="0.48994529879999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveReadingMaterials:" destination="oe0-P8-bU3" eventType="touchUpInside" id="5vb-zZ-V3Z"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-bt-w2o" customClass="ErrorTextField" customModule="Material">
+                                <rect key="frame" x="94" y="45" width="266" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="errorVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isClearIconButtonEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="error" value="Error, requires title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="oe0-P8-bU3" id="DDv-4M-vfF"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hio-fD-sDh" firstAttribute="trailing" secondItem="ph5-fC-ebo" secondAttribute="trailing" constant="20" id="3CC-gL-t22"/>
+                            <constraint firstItem="hio-fD-sDh" firstAttribute="trailing" secondItem="Ao6-bt-w2o" secondAttribute="trailing" constant="15" id="3K4-GD-Iw9"/>
+                            <constraint firstItem="hio-fD-sDh" firstAttribute="bottom" secondItem="ph5-fC-ebo" secondAttribute="bottom" constant="15" id="6jc-Fg-agR"/>
+                            <constraint firstItem="v8l-OO-FHy" firstAttribute="trailing" secondItem="hio-fD-sDh" secondAttribute="trailing" id="6sd-ch-plp"/>
+                            <constraint firstItem="Ao6-bt-w2o" firstAttribute="top" secondItem="hio-fD-sDh" secondAttribute="top" constant="25" id="8ul-tq-cVw"/>
+                            <constraint firstItem="Ao6-bt-w2o" firstAttribute="leading" secondItem="4Nl-BA-L7S" secondAttribute="trailing" constant="40" id="Ail-jd-wDM"/>
+                            <constraint firstItem="v8l-OO-FHy" firstAttribute="leading" secondItem="hio-fD-sDh" secondAttribute="leading" id="Av7-HN-K75"/>
+                            <constraint firstItem="qqi-tQ-inM" firstAttribute="leading" secondItem="hio-fD-sDh" secondAttribute="leading" constant="20" id="MRs-JN-dXw"/>
+                            <constraint firstItem="v8l-OO-FHy" firstAttribute="top" secondItem="Ao6-bt-w2o" secondAttribute="bottom" constant="30" id="NqR-ci-wvC"/>
+                            <constraint firstItem="qqi-tQ-inM" firstAttribute="top" secondItem="v8l-OO-FHy" secondAttribute="bottom" constant="10" id="XNa-JT-6bm"/>
+                            <constraint firstItem="4Nl-BA-L7S" firstAttribute="leading" secondItem="hio-fD-sDh" secondAttribute="leading" constant="20" id="fGq-PY-sxe"/>
+                            <constraint firstItem="hio-fD-sDh" firstAttribute="bottom" secondItem="qqi-tQ-inM" secondAttribute="bottom" constant="15" id="rpC-Se-a6v"/>
+                            <constraint firstItem="4Nl-BA-L7S" firstAttribute="top" secondItem="hio-fD-sDh" secondAttribute="top" constant="30" id="tiR-QJ-bPh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hio-fD-sDh"/>
+                    </view>
+                    <connections>
+                        <outlet property="readingTextView" destination="v8l-OO-FHy" id="CK3-ZK-zqw"/>
+                        <outlet property="titleTextField" destination="Ao6-bt-w2o" id="sDm-9i-ChK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mc-zS-tOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
