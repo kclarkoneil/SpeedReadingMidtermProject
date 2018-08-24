@@ -30,7 +30,7 @@ class LaunchScreenViewController: UIViewController {
   
   func labelAnimation() {
     let animationView = LOTAnimationView(name: "color_line")
-    animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    animationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 100)
     animationView.center = self.view.center
     animationView.contentMode = .scaleAspectFill
     
@@ -50,7 +50,9 @@ class LaunchScreenViewController: UIViewController {
       self.performSegue(withIdentifier: "segueToMainScreen", sender: nil)
     })
   }
-    
+  
+  
+
 
     /*
     // MARK: - Navigation

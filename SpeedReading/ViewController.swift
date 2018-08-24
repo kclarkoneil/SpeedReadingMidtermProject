@@ -75,5 +75,18 @@ class ViewController: UIViewController {
     forwardButton.isEnabled = !reading
     backwardButton.isEnabled = !reading
   }
+  @IBAction func handlePinch(_ recognizer: UIPinchGestureRecognizer) {
+
+      print ("\(recognizer.scale)")
+      let tempFontSize = wordLabel.fontSize * recognizer.scale
+      
+      guard tempFontSize > 12, tempFontSize < 100 else{
+        return
+      }
+      
+      wordLabel.fontSize = tempFontSize
+      recognizer.scale = 1
+    
+  }
 }
 
