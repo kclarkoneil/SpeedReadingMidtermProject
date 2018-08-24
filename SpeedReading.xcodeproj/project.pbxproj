@@ -25,6 +25,9 @@
 		91AC2A0F212E1D5400947590 /* SpeedReadingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A0E212E1D5400947590 /* SpeedReadingUITests.swift */; };
 		91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */; };
 		91AC2A1F212E207D00947590 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1E212E207D00947590 /* Settings.swift */; };
+		91C25BD02130B2EC00241D83 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C25BCE2130B2EC00241D83 /* LaunchScreenViewController.swift */; };
+		91C25BD12130B2EC00241D83 /* LaunchScreenAnimated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C25BCF2130B2EC00241D83 /* LaunchScreenAnimated.storyboard */; };
+		91C25BD32130B2F700241D83 /* color_line.json in Resources */ = {isa = PBXBuildFile; fileRef = 91C25BD22130B2F700241D83 /* color_line.json */; };
 		922D88BE950699C79D92D019 /* Pods_SpeedReadingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A39A2A7CE20F484B8CD1D /* Pods_SpeedReadingUITests.framework */; };
 		A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */; };
 		A1BFA3EF212F403100FFF080 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFA3EE212F403100FFF080 /* TextViewController.swift */; };
@@ -74,6 +77,9 @@
 		91AC2A10212E1D5400947590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingMaterial.swift; sourceTree = "<group>"; };
 		91AC2A1E212E207D00947590 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		91C25BCE2130B2EC00241D83 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		91C25BCF2130B2EC00241D83 /* LaunchScreenAnimated.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenAnimated.storyboard; sourceTree = "<group>"; };
+		91C25BD22130B2F700241D83 /* color_line.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_line.json; sourceTree = "<group>"; };
 		A026B8A27E1E29F2B35967DA /* Pods-SpeedReadingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReadingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReadingUITests/Pods-SpeedReadingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextViewStoryBoard.storyboard; sourceTree = "<group>"; };
 		A1BFA3EE212F403100FFF080 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		91AC29ED212E1D5200947590 /* SpeedReading */ = {
 			isa = PBXGroup;
 			children = (
+				91C25BD42130B31000241D83 /* LaunchScreen */,
 				91AC29EE212E1D5200947590 /* AppDelegate.swift */,
 				91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */,
 				A1FC3467212E5DD1006DA973 /* MainViewController.swift */,
@@ -186,6 +193,16 @@
 				91AC2A10212E1D5400947590 /* Info.plist */,
 			);
 			path = SpeedReadingUITests;
+			sourceTree = "<group>";
+		};
+		91C25BD42130B31000241D83 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				91C25BCF2130B2EC00241D83 /* LaunchScreenAnimated.storyboard */,
+				91C25BCE2130B2EC00241D83 /* LaunchScreenViewController.swift */,
+				91C25BD22130B2F700241D83 /* color_line.json */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		A2B629AAAEB92AFA2C62FDFE /* Frameworks */ = {
@@ -322,8 +339,10 @@
 			files = (
 				91AC29F9212E1D5400947590 /* LaunchScreen.storyboard in Resources */,
 				91AC29F6212E1D5400947590 /* Assets.xcassets in Resources */,
+				91C25BD12130B2EC00241D83 /* LaunchScreenAnimated.storyboard in Resources */,
 				910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */,
 				A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */,
+				91C25BD32130B2F700241D83 /* color_line.json in Resources */,
 				918B1599212F92EF007BB838 /* ImportStoryboard.storyboard in Resources */,
 				91AC29F4212E1D5200947590 /* Main.storyboard in Resources */,
 			);
@@ -439,6 +458,7 @@
 				91AC2A1F212E207D00947590 /* Settings.swift in Sources */,
 				A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */,
 				918B1597212F92EF007BB838 /* ImportViewControllerDelegate.swift in Sources */,
+				91C25BD02130B2EC00241D83 /* LaunchScreenViewController.swift in Sources */,
 				91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */,
 				A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */,
 				918B1598212F92EF007BB838 /* ImportViewController+TextFieldDelegate.swift in Sources */,

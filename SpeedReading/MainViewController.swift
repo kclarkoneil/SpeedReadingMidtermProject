@@ -89,15 +89,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+      if segue.identifier == "displayMaterialSegue"{
         let destinationVC = segue.destination as? TextViewController
         let index = self.ReadingMaterialTableView.indexPathForSelectedRow!
         guard let newController = destinationVC else {
-            return
+          return
         }
         guard let displayMaterial = currentMaterial[index.row] as ReadingMaterial? else {
-                       return
-                    }
+          return
+        }
         newController.currentText = displayMaterial
+      }
     }
     
     
