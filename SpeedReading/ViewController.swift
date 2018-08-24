@@ -77,7 +77,6 @@ class ViewController: UIViewController {
   }
   @IBAction func handlePinch(_ recognizer: UIPinchGestureRecognizer) {
 
-      print ("\(recognizer.scale)")
       let tempFontSize = wordLabel.fontSize * recognizer.scale
       
       guard tempFontSize > 12, tempFontSize < 100 else{
