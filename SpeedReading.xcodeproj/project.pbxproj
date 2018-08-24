@@ -21,6 +21,9 @@
 		91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */; };
 		91AC2A1F212E207D00947590 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1E212E207D00947590 /* Settings.swift */; };
 		922D88BE950699C79D92D019 /* Pods_SpeedReadingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A39A2A7CE20F484B8CD1D /* Pods_SpeedReadingUITests.framework */; };
+		A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */; };
+		A1BFA3EF212F403100FFF080 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFA3EE212F403100FFF080 /* TextViewController.swift */; };
+		A1BFA42D212F6EDC00FFF080 /* CommonWords.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BFA42C212F6EDC00FFF080 /* CommonWords.m */; };
 		A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */; };
 		A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC3467212E5DD1006DA973 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,11 @@
 		91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingMaterial.swift; sourceTree = "<group>"; };
 		91AC2A1E212E207D00947590 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A026B8A27E1E29F2B35967DA /* Pods-SpeedReadingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReadingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReadingUITests/Pods-SpeedReadingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextViewStoryBoard.storyboard; sourceTree = "<group>"; };
+		A1BFA3EE212F403100FFF080 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		A1BFA42A212F6EDB00FFF080 /* SpeedReading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeedReading-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1BFA42B212F6EDC00FFF080 /* CommonWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonWords.h; sourceTree = "<group>"; };
+		A1BFA42C212F6EDC00FFF080 /* CommonWords.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonWords.m; sourceTree = "<group>"; };
 		A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A1FC3467212E5DD1006DA973 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AA6C19363C1D6D9B05FEE7FC /* Pods-SpeedReadingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReadingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReadingTests/Pods-SpeedReadingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +136,10 @@
 				91AC29EE212E1D5200947590 /* AppDelegate.swift */,
 				91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */,
 				A1FC3467212E5DD1006DA973 /* MainViewController.swift */,
+				A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */,
+				A1BFA3EE212F403100FFF080 /* TextViewController.swift */,
+				A1BFA42B212F6EDC00FFF080 /* CommonWords.h */,
+				A1BFA42C212F6EDC00FFF080 /* CommonWords.m */,
 				A1FC3465212E5DC7006DA973 /* MainTableViewCell.swift */,
 				910F96C8212E888B00CDF29A /* String+filterCharacters.swift */,
 				91AC2A1E212E207D00947590 /* Settings.swift */,
@@ -138,6 +150,7 @@
 				910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */,
 				91AC29FA212E1D5400947590 /* Info.plist */,
 				91AC2A02212E1D5400947590 /* SpeedReadingTests */,
+				A1BFA42A212F6EDB00FFF080 /* SpeedReading-Bridging-Header.h */,
 			);
 			path = SpeedReading;
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 				TargetAttributes = {
 					91AC29EA212E1D5200947590 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					91AC29FE212E1D5400947590 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -294,6 +308,7 @@
 				91AC29F9212E1D5400947590 /* LaunchScreen.storyboard in Resources */,
 				91AC29F6212E1D5400947590 /* Assets.xcassets in Resources */,
 				910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */,
+				A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */,
 				91AC29F4212E1D5200947590 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,15 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReadingTests-checkManifestLockResult.txt",
 			);
@@ -342,15 +353,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReadingUITests-checkManifestLockResult.txt",
 			);
@@ -364,15 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SpeedReading-checkManifestLockResult.txt",
 			);
@@ -386,8 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedReading/Pods-SpeedReading-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
@@ -396,8 +397,6 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
@@ -417,12 +416,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */,
+				A1BFA42D212F6EDC00FFF080 /* CommonWords.m in Sources */,
 				91AC29F1212E1D5200947590 /* ViewController.swift in Sources */,
 				91AC2A1F212E207D00947590 /* Settings.swift in Sources */,
 				A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */,
 				91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */,
 				A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */,
 				910F96C9212E888B00CDF29A /* String+filterCharacters.swift in Sources */,
+				A1BFA3EF212F403100FFF080 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +597,7 @@
 			baseConfigurationReference = AE3179446260C96FE293C342 /* Pods-SpeedReading.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SpeedReading/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -604,6 +606,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bennett.SpeedReading;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeedReading/SpeedReading-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,6 +618,7 @@
 			baseConfigurationReference = 885C7358BEA4454684511A61 /* Pods-SpeedReading.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SpeedReading/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -622,6 +627,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bennett.SpeedReading;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpeedReading/SpeedReading-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -22,7 +22,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         self.currentMaterial = [ReadingMaterial]()
-self.YourLibraryLabel.text = "Your Library"
+        self.YourLibraryLabel.text = "Your Library"
         self.ReadingMaterialTableView.delegate = self
         self.ReadingMaterialTableView.dataSource = self
         
