@@ -47,18 +47,20 @@ extension MainViewController{
   }
   
   
-   func realmRead(){
+   func realmRead() -> [ReadingMaterial]?{
     guard let realm = try? Realm() else{
       print("Error in Reading")
-      return
+      return nil
     }
     
     let resultsList = realm.objects(ReadingMaterial.self)
     
+    var readingArray = [ReadingMaterial]()
     for reading in resultsList{
       reading.rebuildWordArray()
-      currentMaterial.append(reading)
+      readingArray.append(reading)
     }
+    return readingArray
   }
   
   
