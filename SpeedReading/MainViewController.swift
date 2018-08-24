@@ -16,9 +16,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var SettingsButton: UIButton!
     @IBOutlet weak var AddTextButton: UIButton!
 
-    func applyCurrentMaterial(currentMaterial: ReadingMaterial) -> ReadingMaterial {
-        return currentMaterial
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,39 +77,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                    numberOfRowsInSection section: Int) -> Int {
         return self.currentMaterial.count
     }
-//
-//
-//func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-            
-            
 
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
-      if segue.identifier == "displayMaterialSegue"{
-        let destinationVC = segue.destination as? TextViewController
-        let index = self.ReadingMaterialTableView.indexPathForSelectedRow!
-        guard let newController = destinationVC else {
-          return
-        }
-        guard let displayMaterial = currentMaterial[index.row] as ReadingMaterial? else {
-          return
-        }
-        newController.currentText = displayMaterial
-      }
-    }
-    
-    
-    
-    /*
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "displayMaterialSegue"{
+      let destinationVC = segue.destination as? TextViewController
+      let index = self.ReadingMaterialTableView.indexPathForSelectedRow!
+      guard let newController = destinationVC else {
+        return
+      }
+      guard let displayMaterial = currentMaterial[index.row] as ReadingMaterial? else {
+        return
+      }
+      newController.currentText = displayMaterial
     }
-    */
+  }
 
 }
