@@ -1,4 +1,5 @@
 PODS:
+  - lottie-ios (2.5.0)
   - Material (2.16.4):
     - Material/Core (= 2.16.4)
   - Material/Core (2.16.4):
@@ -13,22 +14,25 @@ PODS:
     - Realm (= 3.7.6)
 
 DEPENDENCIES:
+  - lottie-ios
   - Material
   - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - lottie-ios
     - Material
     - Motion
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: a0a9d863a37cf1dd3dc4d7fc593415f556471055
+PODFILE CHECKSUM: 4d55f6c9a6a75a45a87bbb9ba2d14a39a8395f9c
 
 COCOAPODS: 1.5.3

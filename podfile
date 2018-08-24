@@ -8,7 +8,7 @@ target 'SpeedReading' do
   # Pods for SpeedReading
   pod 'RealmSwift'
   pod 'Material'
-
+  pod 'lottie-ios'
 
   target 'SpeedReadingTests' do
     inherit! :search_paths

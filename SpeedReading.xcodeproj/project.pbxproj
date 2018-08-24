@@ -25,6 +25,9 @@
 		91AC2A0F212E1D5400947590 /* SpeedReadingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A0E212E1D5400947590 /* SpeedReadingUITests.swift */; };
 		91AC2A1D212E1F9400947590 /* ReadingMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */; };
 		91AC2A1F212E207D00947590 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC2A1E212E207D00947590 /* Settings.swift */; };
+		91D8427121308D6200D8CC2F /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D8427021308D6200D8CC2F /* LaunchScreenViewController.swift */; };
+		91D8427321308EE300D8CC2F /* LaunchScreenAnimated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D8427221308EE300D8CC2F /* LaunchScreenAnimated.storyboard */; };
+		91D8427B2130932C00D8CC2F /* color_line.json in Resources */ = {isa = PBXBuildFile; fileRef = 91D8427A2130932C00D8CC2F /* color_line.json */; };
 		922D88BE950699C79D92D019 /* Pods_SpeedReadingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A39A2A7CE20F484B8CD1D /* Pods_SpeedReadingUITests.framework */; };
 		A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */; };
 		A1BFA3EF212F403100FFF080 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFA3EE212F403100FFF080 /* TextViewController.swift */; };
@@ -74,6 +77,9 @@
 		91AC2A10212E1D5400947590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91AC2A1C212E1F9400947590 /* ReadingMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingMaterial.swift; sourceTree = "<group>"; };
 		91AC2A1E212E207D00947590 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		91D8427021308D6200D8CC2F /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchScreenViewController.swift; path = /Users/bennett/Documents/SpeedReadingMidtermProject/SpeedReading/LaunchScreenViewController.swift; sourceTree = "<absolute>"; };
+		91D8427221308EE300D8CC2F /* LaunchScreenAnimated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenAnimated.storyboard; sourceTree = "<group>"; };
+		91D8427A2130932C00D8CC2F /* color_line.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_line.json; sourceTree = "<group>"; };
 		A026B8A27E1E29F2B35967DA /* Pods-SpeedReadingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedReadingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedReadingUITests/Pods-SpeedReadingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1BFA3EC212F3AB100FFF080 /* TextViewStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextViewStoryBoard.storyboard; sourceTree = "<group>"; };
 		A1BFA3EE212F403100FFF080 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				918B1594212F92EE007BB838 /* ImportViewController+TextFieldDelegate.swift */,
 				918B1593212F92EE007BB838 /* ImportViewControllerDelegate.swift */,
 				91AC29F5212E1D5400947590 /* Assets.xcassets */,
+				91D8427021308D6200D8CC2F /* LaunchScreenViewController.swift */,
+				91D8427A2130932C00D8CC2F /* color_line.json */,
+				91D8427221308EE300D8CC2F /* LaunchScreenAnimated.storyboard */,
 				91AC29F7212E1D5400947590 /* LaunchScreen.storyboard */,
 				910F96CA212E88E900CDF29A /* ReadingStoryboard.storyboard */,
 				91AC29FA212E1D5400947590 /* Info.plist */,
@@ -324,6 +333,8 @@
 				91AC29F6212E1D5400947590 /* Assets.xcassets in Resources */,
 				910F96CB212E88E900CDF29A /* ReadingStoryboard.storyboard in Resources */,
 				A1BFA3ED212F3AB100FFF080 /* TextViewStoryBoard.storyboard in Resources */,
+				91D8427321308EE300D8CC2F /* LaunchScreenAnimated.storyboard in Resources */,
+				91D8427B2130932C00D8CC2F /* color_line.json in Resources */,
 				918B1599212F92EF007BB838 /* ImportStoryboard.storyboard in Resources */,
 				91AC29F4212E1D5200947590 /* Main.storyboard in Resources */,
 			);
@@ -411,6 +422,7 @@
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -418,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -437,6 +450,7 @@
 				91AC2A1F212E207D00947590 /* Settings.swift in Sources */,
 				A1FC3468212E5DD1006DA973 /* MainViewController.swift in Sources */,
 				918B1597212F92EF007BB838 /* ImportViewControllerDelegate.swift in Sources */,
+				91D8427121308D6200D8CC2F /* LaunchScreenViewController.swift in Sources */,
 				91AC29EF212E1D5200947590 /* AppDelegate.swift in Sources */,
 				A1FC3466212E5DC7006DA973 /* MainTableViewCell.swift in Sources */,
 				918B1598212F92EF007BB838 /* ImportViewController+TextFieldDelegate.swift in Sources */,

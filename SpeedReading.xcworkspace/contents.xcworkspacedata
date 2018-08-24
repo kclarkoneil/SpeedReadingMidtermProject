@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/bennett/Documents/SpeedReadingMidtermProject/SpeedReading/LaunchScreenViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:SpeedReading.xcodeproj">
    </FileRef>
    <FileRef
