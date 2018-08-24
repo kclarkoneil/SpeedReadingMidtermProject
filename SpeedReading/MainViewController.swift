@@ -25,26 +25,41 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.YourLibraryLabel.text = "Your Library"
         self.ReadingMaterialTableView.delegate = self
         self.ReadingMaterialTableView.dataSource = self
-        
+      
+      
         //Sample material
-        
-        let essay = ReadingMaterial.init(title: "myEssay", body: "asdkfja;lskjdf;lakjsd;lkfja;slkd")
-        self.currentMaterial.append(essay)
-        
-        let coolStory = ReadingMaterial.init(title: "thatsAStory", body: "whooooo")
-        self.currentMaterial.append(coolStory)
-        
-        let bennetsStory = ReadingMaterial.init(title: "BennetsLife", body: "amazing")
-        self.currentMaterial.append(bennetsStory)
-        
-        let kitsStory = ReadingMaterial.init(title: "KitsLife", body: "prettyCool")
-        self.currentMaterial.append(kitsStory)
-        
-        
+      if let tempArray = realmRead(), tempArray.count > 0{
+        currentMaterial = tempArray
+      }
+      else{
+        setupSampleData()
+      }
         // Do any additional setup after loading the view.
     
-   
     }
+  
+  
+  func setupSampleData() {
+    
+    let reading1 = ReadingMaterial.init(title: "The Great Gatsby", body: "In my younger and more vulnerable years my father gave me some advice that Ive been turning over in my mind ever since. ")
+    self.currentMaterial.append(reading1)
+    
+    let reading2 = ReadingMaterial.init(title: "The Scarlet Letter", body: "It is a little remarkable, that—though disinclined to talk overmuch of myself and my affairs at the fireside, and to my personal friends—an autobiographical impulse should twice in my life have taken possession of me, in addressing the public. The first time was three or four years since, when I favored the reader—inexcusably, and for no earthly reason, that either the indulgent reader or the intrusive author could imagine—with a description of my way of life in the deep quietude of an Old Manse.")
+    self.currentMaterial.append(reading2)
+    
+    let reading3 = ReadingMaterial.init(title: "To Kill a Mockingbird", body: "When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jems fears of never being able to play football were assuaged, he was seldom self-conscious about his injury. His left arm was somewhat shorter than his right; when he stood or walked, the back of his hand was at right angles to his body, his thumb parallel to his thigh. He couldn’t have cared less, so long as he could pass and punt.")
+    self.currentMaterial.append(reading3)
+    
+    let reading4 = ReadingMaterial.init(title: "Fahrenheit 451", body: "It was a pleasure to burn it was a special pleasure to see things eaten, to see things blackened and changed. With the brass nozzle in his fists, with this great python spitting its venomous kerosene upon the world, the blood pounded in his head, and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history. With his symbolic helmet numbered 451 on his stolid head, and his eyes all orange flame with the thought of what came next, he flicked the igniter and the house jumped up in a gorging fire that burned the evening sky red and yellow and black. He strode in a swarm of fireflies. He wanted above all, like the old joke, to shove a marshmallow on a stick in the furnace, while the flapping pigeon-winged books died on the porch and lawn of the house. While the books went up in sparkling whirls and blew away on a wind turned dark with burning. ")
+    self.currentMaterial.append(reading4)
+    writeReadingMaterial(reading: reading1)
+    writeReadingMaterial(reading: reading2)
+    writeReadingMaterial(reading: reading3)
+    writeReadingMaterial(reading: reading4)
+    
+  }
+  
+  // Mark: UITableDataSourceDelegate functions
     
     func tableView(_ tableView:UITableView, cellForRowAt: IndexPath) -> UITableViewCell {
         let cell:MainTableViewCell = self.ReadingMaterialTableView.dequeueReusableCell(withIdentifier: "mainReuseCell", for: cellForRowAt) as! MainTableViewCell
