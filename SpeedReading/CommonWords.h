@@ -11,5 +11,5 @@
 @interface CommonWords : NSObject
 
 @property NSArray *commonWords;
-@property NSArray *testInput;
+//@property NSArray *testInput;
 @end

@@ -9,14 +9,16 @@
 import UIKit
 
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var currentMaterial:Array <ReadingMaterial> = []
     @IBOutlet weak var ReadingMaterialTableView: UITableView!
     @IBOutlet weak var YourLibraryLabel: UILabel!
     @IBOutlet weak var SettingsButton: UIButton!
     @IBOutlet weak var AddTextButton: UIButton!
 
-    
+    func applyCurrentMaterial(currentMaterial: ReadingMaterial) -> ReadingMaterial {
+        return currentMaterial
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +80,25 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                    numberOfRowsInSection section: Int) -> Int {
         return self.currentMaterial.count
     }
-    
+//
+//
+//func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            
+            
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? TextViewController
+        let index = self.ReadingMaterialTableView.indexPathForSelectedRow!
+        guard let newController = destinationVC else {
+            return
+        }
+        guard let displayMaterial = currentMaterial[index.row] as ReadingMaterial? else {
+                       return
+                    }
+        newController.currentText = displayMaterial
+    }
     
     
     

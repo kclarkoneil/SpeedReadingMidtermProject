@@ -9,29 +9,28 @@
 import UIKit
 
 class TextViewController: UIViewController {
-    //var currentText = ReadingMaterial()
+    var currentText = ReadingMaterial()
 var commonWordFilter = [String]()
-    var inputText = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Testing information
-        self.TextTitleLabel.text = "Title"
-        let TestKeyWords = CommonWords()
-        self.inputText = TestKeyWords.testInput as! [String]
+        
+//        let TestKeyWords = CommonWords()
+//        self.currentText.wordArray = TestKeyWords.testInput as! [String]
         //Remove when ReadingMaterial object is available
         
         
         
         
-        //
+      
         
+        self.TextTitleLabel.text = self.currentText.title
+        let filterWords = CommonWords()
+        self.commonWordFilter = filterWords.commonWords as! [String]
         
-        let keyWords = CommonWords()
-        self.commonWordFilter = keyWords.commonWords as! [String]
-        
-        self.TextBodyView.text = self.inputText.joined(separator: " ")
+        self.TextBodyView.text = self.currentText.body
         self.FilterSlider.maximumValue = Float(self.commonWordFilter.count)
         self.FilterSlider.minimumValue = 0
         // Do any additional setup after loading the view.
@@ -54,7 +53,7 @@ var commonWordFilter = [String]()
 
     @IBAction func AdjustSlide(_ sender: UISlider) {
         let adjustedFilter:Array = adjustFilter (sliderValue: FilterSlider.value)
-        let outputArray = filterWords(arrayA: self.inputText, arrayB: adjustedFilter)
+        let outputArray = filterWords(arrayA: self.currentText.wordArray, arrayB: adjustedFilter)
         self.TextBodyView.text = outputArray.joined(separator: " ")
     }
     

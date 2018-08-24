@@ -64,7 +64,7 @@
                                         <connections>
                                             <outlet property="DateLabel" destination="jKa-Xx-RPm" id="QEC-ME-zHo"/>
                                             <outlet property="TitleLabel" destination="Ft3-0P-DLK" id="b1C-gd-6la"/>
-                                            <segue destination="Pyj-Tn-I09" kind="show" id="m5e-NA-AEt"/>
+                                            <segue destination="Pyj-Tn-I09" kind="show" identifier="displayMaterialSegue" id="m5e-NA-AEt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,14 +91,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-4I-m7Y">
-                                <rect key="frame" x="16" y="204" width="33" height="21"/>
+                                <rect key="frame" x="16" y="189" width="33" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Read" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-N7-Fd7">
-                                <rect key="frame" x="289" y="204" width="76" height="21"/>
+                                <rect key="frame" x="289" y="189" width="76" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
