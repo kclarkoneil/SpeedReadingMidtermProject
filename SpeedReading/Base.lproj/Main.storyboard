@@ -36,7 +36,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Cj-5e-1zJ">
                                 <rect key="frame" x="0.0" y="99" width="375" height="568"/>
-                                <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="mainReuseCell" id="UxY-Av-L01" customClass="MainTableViewCell" customModule="SpeedReading" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKa-Xx-RPm">
-                                                    <rect key="frame" x="734" y="14" width="100" height="12"/>
+                                                    <rect key="frame" x="275" y="14" width="100" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="UuL-ZP-EfH"/>
                                                     </constraints>
@@ -68,7 +68,7 @@
                                                 <constraint firstItem="jKa-Xx-RPm" firstAttribute="top" secondItem="Hmi-mU-z1g" secondAttribute="top" constant="14" id="y9r-MY-Qds"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.90588235294117647" green="0.9137254901960784" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="DateLabel" destination="jKa-Xx-RPm" id="QEC-ME-zHo"/>
                                             <outlet property="TitleLabel" destination="Ft3-0P-DLK" id="b1C-gd-6la"/>
@@ -96,7 +96,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.45098039215686275" green="0.5607843137254902" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lUe-4I-m7Y" firstAttribute="top" secondItem="vQu-Bp-SmN" secondAttribute="top" constant="5" id="69B-em-Chq"/>
                                     <constraint firstItem="lUe-4I-m7Y" firstAttribute="leading" secondItem="vQu-Bp-SmN" secondAttribute="leading" constant="15" id="CmR-cY-WrL"/>
@@ -111,7 +111,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.27058823529411763" green="0.36862745098039218" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.32549019607843138" green="0.43137254901960786" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1Cj-5e-1zJ" firstAttribute="leading" secondItem="sn6-79-HHJ" secondAttribute="leading" id="60W-A8-mOe"/>
                             <constraint firstItem="sn6-79-HHJ" firstAttribute="trailing" secondItem="1Cj-5e-1zJ" secondAttribute="trailing" id="Yem-Yh-CrM"/>
