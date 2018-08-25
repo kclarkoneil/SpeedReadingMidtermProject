@@ -80,6 +80,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+          let reading = self.currentMaterial[indexPath.row]
+          deleteReadingMaterial(reading: reading)
+          self.currentMaterial.remove(at: indexPath.row)
+          tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    }
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
