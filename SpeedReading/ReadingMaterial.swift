@@ -54,6 +54,20 @@ class ReadingMaterial: Object {
         
         
     }
+    func setNewCurrentPostion(newPosition: Int) -> (){
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                currentPosition = newPosition
+            }
+        }
+        catch {
+            print("error")
+        }
+        return
+    }
+                
     
 }
 

@@ -29,7 +29,10 @@ class TextViewController: UIViewController {
         
         self.FilterSlider.maximumValue = Float(self.commonWordFilter.count)
         self.FilterSlider.minimumValue = 0
-
+        
+        
+        //Testing
+//        self.currentText.setNewCurrentPostion(newPosition: 43)
     }
 
   
@@ -60,23 +63,23 @@ class TextViewController: UIViewController {
                     shouldAdd = false
                     
                     if (inputString == currentWord) {
-                       let oldPositionIndex = self.currentText.wordArray.index(of: currentWord)
+                        let oldPositionIndex = self.currentText.wordArray.index(of: currentWord)
                         guard let positionIndex = oldPositionIndex else {
                             break
-                            }
+                        }
                         
                         newPositionIndex = positionIndex - 1
-                    
-                    break
+                        break
+                    }
                 }
             }
             if shouldAdd == true {
                 outputArray.append(inputString)
+                
+                
             }
-            
         }
-    }
-        self.currentText.currentPosition = newPositionIndex
+        self.currentText.setNewCurrentPostion(newPosition: newPositionIndex)
         return outputArray
     }
 
@@ -85,7 +88,32 @@ class TextViewController: UIViewController {
   @IBAction func AdjustSlide(_ sender: UISlider) {
     let adjustedFilter:Array = adjustFilter (sliderValue: FilterSlider.value)
     let outputArray = filterWords(arrayA: self.currentText.wordArray, arrayB: adjustedFilter)
-    self.TextBodyView.text = outputArray.joined(separator: " ")
+    var bodyText = NSMutableAttributedString()
+    for (i, word) in outputArray.enumerated() {
+        
+        let space = NSAttributedString (string: " ")
+        bodyText.append(space)
+        
+        if i == self.currentText.currentPosition {
+            
+            let myAttribute = [NSAttributedStringKey.backgroundColor: UIColor.yellow]
+            let highlightedWord = NSAttributedString (string: word, attributes: myAttribute)
+            bodyText.append(highlightedWord)
+            
+        }
+        else {
+        
+        
+ 
+        let attributedWord = NSAttributedString (string: (word))
+        bodyText.append(attributedWord)
+        }
+        
+            
+
+    }
+    self.TextBodyView.attributedText = bodyText
+    
   }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -100,24 +128,6 @@ class TextViewController: UIViewController {
         }
     }
     
-    func showCurrentPosition(regularWord: String) -> NSAttributedString {
 
-        let accessibilityBackgroundColor: NSAttributedString.key
-        let newWord = NSAttributedString.init(string: regularWord, attributes: attrs)
-        
-        return newWord
-       [NSAttributedStringKey: Any] = [.font: UIFont(name: "AvenirNext-Medium", size: 12)!]
-        
-        
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
