@@ -43,8 +43,10 @@ class ReadingMaterial: Object {
                 let realm = try Realm()
                 try realm.write {
                     currentPosition += 1
-                    
                 }
+                try realm.write {
+                   lastReadDate = Date()
+              }
             }
             catch{
                 print("Error encountered")
@@ -59,8 +61,11 @@ class ReadingMaterial: Object {
         do {
             let realm = try Realm()
             try realm.write {
-                currentPosition = newPosition
+              currentPosition = newPosition
             }
+          try realm.write {
+            lastReadDate = Date()
+          }
         }
         catch {
             print("error")
