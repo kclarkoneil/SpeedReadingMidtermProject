@@ -57,6 +57,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isClearIconButtonEnabled" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="error" value="Error, requires title"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                        <color key="value" red="0.483929728" green="0.483929728" blue="0.483929728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="oe0-P8-bU3" id="DDv-4M-vfF"/>

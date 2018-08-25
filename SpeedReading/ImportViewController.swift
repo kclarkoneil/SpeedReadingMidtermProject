@@ -55,6 +55,10 @@ class ImportViewController: UIViewController {
             }
             return documentContent
         }
+      //issues with the URL, tell the user
+        let alert = UIAlertController(title: "Url is invalid", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
         return nil
     }
     
@@ -66,7 +70,7 @@ class ImportViewController: UIViewController {
     // Mark: IBActions
     @IBAction func importPDF(_ sender: Any) {
         //call function to open a popup dialog
-        let alert = UIAlertController(title: "Enter an url for a pdf", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Url for pdf", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         alert.addTextField(configurationHandler: { textField in
@@ -80,9 +84,12 @@ class ImportViewController: UIViewController {
                 if !urlString.hasPrefix("http://"){
                     urlString = "http://" + urlString
                 }
-                if let url = URL(string: urlString){
-                    self.readingTextView.text = self.processPDF(url: url)
-                }
+              guard let url = URL(string: urlString) else{
+                return
+              }
+              
+              self.readingTextView.text = self.processPDF(url: url)
+                
             }
         }))
         
