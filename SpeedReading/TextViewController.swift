@@ -26,6 +26,7 @@ class TextViewController: UIViewController {
         self.commonWordFilter = filterWords.commonWords as! [String]
         
         self.TextBodyView.text = self.currentText.body
+        
         self.FilterSlider.maximumValue = Float(self.commonWordFilter.count)
         self.FilterSlider.minimumValue = 0
 
@@ -44,21 +45,39 @@ class TextViewController: UIViewController {
     func filterWords(arrayA: Array<String>, arrayB: Array<String>) -> Array<String> {
         var outputArray = [String]()
         var shouldAdd:Bool = true
+        
+        var newPositionIndex = self.currentText.currentPosition
+        
+        
         for inputString in arrayA {
+            
             shouldAdd = true
             for filterString in arrayB {
+                
+                let currentWord = self.currentText.wordArray[newPositionIndex]
+                
                 if (inputString == filterString) {
                     shouldAdd = false
+                    
+                    if (inputString == currentWord) {
+                       let oldPositionIndex = self.currentText.wordArray.index(of: currentWord)
+                        guard let positionIndex = oldPositionIndex else {
+                            break
+                            }
+                        
+                        newPositionIndex = positionIndex - 1
+                    
                     break
                 }
             }
             if shouldAdd == true {
                 outputArray.append(inputString)
             }
+            
         }
-        
+    }
+        self.currentText.currentPosition = newPositionIndex
         return outputArray
-        
     }
 
   // Mark: IBActions
@@ -68,7 +87,29 @@ class TextViewController: UIViewController {
     let outputArray = filterWords(arrayA: self.currentText.wordArray, arrayB: adjustedFilter)
     self.TextBodyView.text = outputArray.joined(separator: " ")
   }
-  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ReadingViewSegue"{
+            let destinationVC = segue.destination as? ViewController
+            
+            guard let newController = destinationVC else {
+                return
+            }
+           
+            newController.readingMaterial = self.currentText
+        }
+    }
+    
+    func showCurrentPosition(regularWord: String) -> NSAttributedString {
+
+        let accessibilityBackgroundColor: NSAttributedString.key
+        let newWord = NSAttributedString.init(string: regularWord, attributes: attrs)
+        
+        return newWord
+       [NSAttributedStringKey: Any] = [.font: UIFont(name: "AvenirNext-Medium", size: 12)!]
+        
+        
+    }
     /*
     // MARK: - Navigation
 

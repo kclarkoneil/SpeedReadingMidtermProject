@@ -29,16 +29,16 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     //test data
 
-    runTimer()
+//   runTimer()
     
-    readingMaterial = ReadingMaterial.init(title: "Test Book",
-                                           body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum")
+//    readingMaterial = ReadingMaterial.init(title: "Test Book",
+//                                           body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum")
   }
 
   func runTimer() {
      let interval = 60.0 / Double(settings.WPM)
     print ("Interval is \(interval)")
-     wordTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(forwardPressed(_:)), userInfo: nil, repeats: true)
+     wordTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(forwardPressed(), userInfo: nil, repeats: true)
   }
   
   @objc func updateWordLabel(){
@@ -51,15 +51,16 @@ class ViewController: UIViewController {
   
   }
   
-  @IBAction func forwardPressed(_ sender: Any) {
+
+    func forwardPressed() {
     readingMaterial?.nextWord()
     updateWordLabel()
   }
   
-  @IBAction func backPressed(_ sender: Any) {
-    readingMaterial?.previousWord()
-    updateWordLabel()
-  }
+//  @IBAction func backPressed(_ sender: Any) {
+//    readingMaterial?.previousWord()
+//    updateWordLabel()
+//  }
   
   
   @IBAction func playPausePressed(_ sender: Any) {
@@ -87,5 +88,15 @@ class ViewController: UIViewController {
       recognizer.scale = 1
     
   }
+    @IBAction func handleTap(_ recognizer: UITapGestureRecognizer) {
+        
+        reading = !reading
+        if reading{
+            runTimer()
+        }
+        else{
+            wordTimer?.invalidate()
+        }
+    }
 }
 
