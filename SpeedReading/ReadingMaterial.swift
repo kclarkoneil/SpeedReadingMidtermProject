@@ -26,30 +26,48 @@ class ReadingMaterial: Object {
   }
   
   
-  func rebuildWordArray(){
-    let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,"))
-    wordArray = filteredString.components(separatedBy: " ")
-  }
-  
-  func getCurrentWord() -> String? {
-    return wordArray[currentPosition]
-  }
-  
-  func nextWord() -> () {
-  
-    guard currentPosition >= wordArray.count - 1 else {
-      currentPosition += 1
-      return
+    func rebuildWordArray(){
+        let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,"))
+        wordArray = filteredString.components(separatedBy: " ")
     }
     
-    
-  }
-  
-  func previousWord() -> () {
-    
-    guard currentPosition <= 0 else{
-      currentPosition -= 1
-      return
+    func getCurrentWord() -> String? {
+        return wordArray[currentPosition]
     }
-  }
+    
+    func nextWord() -> () {
+        
+        guard currentPosition >= wordArray.count - 1 else {
+            
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    currentPosition += 1
+                    
+                }
+            }
+            catch{
+                print("Error encountered")
+            }
+            return
+        }
+        
+        
+    }
+    func setNewCurrentPostion(newPosition: Int) -> (){
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                currentPosition = newPosition
+            }
+        }
+        catch {
+            print("error")
+        }
+        return
+    }
+                
+    
 }
+

@@ -40,7 +40,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="l5o-jw-uEi" kind="show" id="eLb-EB-tvt"/>
+                                    <segue destination="l5o-jw-uEi" kind="show" identifier="ReadingViewSegue" id="eLb-EB-tvt"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-sC-WZz">
