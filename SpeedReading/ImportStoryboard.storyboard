@@ -26,24 +26,22 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v8l-OO-FHy">
                                 <rect key="frame" x="0.0" y="105" width="375" height="503"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-tQ-inM" customClass="RaisedButton" customModule="Material">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-tQ-inM" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="20" y="618" width="54" height="34"/>
-                                <state key="normal" title="Import">
-                                    <color key="titleColor" red="0.41415915623747568" green="0.48994529881228266" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <color key="backgroundColor" red="0.56862745098039214" green="0.65490196078431373" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Import"/>
                                 <connections>
                                     <action selector="importPDF:" destination="oe0-P8-bU3" eventType="touchUpInside" id="yTd-7x-rC7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-fC-ebo" customClass="RaisedButton" customModule="Material">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-fC-ebo" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="315" y="618" width="40" height="34"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.41415915619999999" green="0.48994529879999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <color key="backgroundColor" red="0.56862745098039214" green="0.65490196078431373" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveReadingMaterials:" destination="oe0-P8-bU3" eventType="touchUpInside" id="5vb-zZ-V3Z"/>
                                 </connections>
@@ -65,7 +63,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.85098039215686272" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hio-fD-sDh" firstAttribute="trailing" secondItem="ph5-fC-ebo" secondAttribute="trailing" constant="20" id="3CC-gL-t22"/>
                             <constraint firstItem="hio-fD-sDh" firstAttribute="trailing" secondItem="Ao6-bt-w2o" secondAttribute="trailing" constant="15" id="3K4-GD-Iw9"/>

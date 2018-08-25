@@ -9,6 +9,6 @@
 import Foundation
 
 protocol ImportViewControllerDelegate{
-    func saveReadingMaterial(_: ImportViewController, reading: ReadingMaterial)
+    func saveReadingMaterial(controller: ImportViewController, reading: ReadingMaterial)
     
 }

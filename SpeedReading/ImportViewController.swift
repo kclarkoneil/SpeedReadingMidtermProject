@@ -96,8 +96,9 @@ class ImportViewController: UIViewController {
             reading = ReadingMaterial(title: title,
                                           body: readingTextView.text)
             if let delegate = delegate, let reading = reading{
-                delegate.saveReadingMaterial(self, reading: reading)
+              delegate.saveReadingMaterial(controller: self, reading: reading)
             }
+          self.navigationController?.popViewController(animated: true)
         }
         else{
             titleTextField.detail = "Error: input title"

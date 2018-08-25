@@ -9,7 +9,9 @@
 import UIKit
 
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImportViewControllerDelegate {
+
+  
     var currentMaterial:Array <ReadingMaterial> = []
     @IBOutlet weak var ReadingMaterialTableView: UITableView!
     @IBOutlet weak var YourLibraryLabel: UILabel!
@@ -21,7 +23,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         self.currentMaterial = [ReadingMaterial]()
-        self.YourLibraryLabel.text = "Your Library"
         self.ReadingMaterialTableView.delegate = self
         self.ReadingMaterialTableView.dataSource = self
       
@@ -95,6 +96,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       }
       newController.currentText = displayMaterial
     }
+    else if segue.identifier == "segueImportReading"{
+      if let destinationVC = segue.destination as? ImportViewController{
+        destinationVC.delegate = self
+      }
+    }
   }
 
+  
+  // MARK: - ImportViewController Delegate functions
+  
+  func saveReadingMaterial(controller: ImportViewController, reading: ReadingMaterial) {
+    
+    //write to realm
+    self.currentMaterial.append(reading)
+    writeReadingMaterial(reading: reading)
+    
+    ReadingMaterialTableView.reloadData()
+  }
 }
