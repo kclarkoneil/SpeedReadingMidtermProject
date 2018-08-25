@@ -126,7 +126,7 @@
                     <navigationItem key="navigationItem" title="My Library" id="z4z-gH-HiF">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="ka1-nA-WXe">
                             <connections>
-                                <segue destination="Du5-Gl-mcF" kind="show" identifier="segueImportReading" id="kiO-rh-kfo"/>
+                                <segue destination="Du5-Gl-mcF" kind="presentation" identifier="segueImportReading" id="kiO-rh-kfo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

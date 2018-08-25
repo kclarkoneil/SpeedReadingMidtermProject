@@ -66,11 +66,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let material = self.currentMaterial[cellForRowAt.row]
         cell.TitleLabel.text = material.title
         
-       let creationDate = DateFormatter ()
-        creationDate.dateStyle = .medium
-        
-        let formattedDate = creationDate.string(from: material.createdDate)
-        cell.DateLabel.text = formattedDate
+       let dateFromatter = DateFormatter ()
+        dateFromatter.dateStyle = .medium
+      
+        if let lastReadDate = material.lastReadDate{
+          let formattedDate = dateFromatter.string(from: lastReadDate)
+          cell.DateLabel.text = formattedDate
+        }
+        else{
+          cell.DateLabel.text = ""
+        }
         return cell
         
     }
@@ -106,9 +111,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       newController.currentText = displayMaterial
     }
     else if segue.identifier == "segueImportReading"{
-      if let destinationVC = segue.destination as? ImportViewController{
-        destinationVC.delegate = self
+      guard let navController = segue.destination as? UINavigationController else{
+        return
       }
+      guard let importController = navController.viewControllers[0] as? ImportViewController else{
+        return
+      }
+      importController.delegate = self
+      
     }
   }
 

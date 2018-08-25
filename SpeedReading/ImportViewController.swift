@@ -25,13 +25,10 @@ class ImportViewController: UIViewController {
         titleTextField.isErrorRevealed = false
 
         // Do any additional setup after loading the view.
+      readingTextView.becomeFirstResponder()
+      
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -62,10 +59,14 @@ class ImportViewController: UIViewController {
         return nil
     }
     
-    func promptForURL() {
-
-    
-    }
+  // Mark: Keyboard appear layout changes
+  @objc func keyboardShown(n:NSNotification) {
+    let d = n.userInfo!
+    var r = (d[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+    r = readingTextView.convert(r, from:nil)
+    readingTextView.contentInset.bottom = r.size.height
+    readingTextView.scrollIndicatorInsets.bottom = r.size.height
+  }
     
     // Mark: IBActions
     @IBAction func importPDF(_ sender: Any) {
@@ -97,7 +98,11 @@ class ImportViewController: UIViewController {
         
         
     }
-    
+  
+    @IBAction func cancelImport(_ sender: Any) {
+      self.dismiss(animated: true, completion: nil)
+    }
+  
     @IBAction func saveReadingMaterials(_ sender: Any) {
         if let title = titleTextField.text {
             reading = ReadingMaterial(title: title,
@@ -105,7 +110,7 @@ class ImportViewController: UIViewController {
             if let delegate = delegate, let reading = reading{
               delegate.saveReadingMaterial(controller: self, reading: reading)
             }
-          self.navigationController?.popViewController(animated: true)
+          self.dismiss(animated: true, completion: nil)
         }
         else{
             titleTextField.detail = "Error: input title"
