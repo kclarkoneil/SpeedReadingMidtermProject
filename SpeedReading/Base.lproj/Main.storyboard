@@ -46,9 +46,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKa-Xx-RPm">
-                                                    <rect key="frame" x="275" y="14" width="100" height="12"/>
+                                                    <rect key="frame" x="280" y="14" width="95" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="UuL-ZP-EfH"/>
+                                                        <constraint firstAttribute="width" constant="95" id="UuL-ZP-EfH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
@@ -80,29 +80,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQu-Bp-SmN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="33"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUe-4I-m7Y">
-                                        <rect key="frame" x="15" y="5" width="36.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Read" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-N7-Fd7">
-                                        <rect key="frame" x="275" y="6" width="100" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10X-Ye-b1e" customClass="FlatButton" customModule="Material">
+                                        <rect key="frame" x="15" y="0.0" width="42" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Title">
+                                            <color key="titleColor" red="0.96374408290000002" green="0.96374408290000002" blue="0.96374408290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sortByTitle:" destination="om2-Rs-wVj" eventType="touchUpInside" id="0S6-tU-aJN"/>
+                                            <action selector="sortByTitle:" destination="iIA-FN-hVi" eventType="touchUpInside" id="frn-Nk-lQD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axR-dl-UuY" customClass="FlatButton" customModule="Material">
+                                        <rect key="frame" x="275" y="0.0" width="100" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="psL-NS-NKc"/>
+                                            <constraint firstAttribute="width" constant="100" id="kzN-P1-KFl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Last Read">
+                                            <color key="titleColor" red="0.96374408290000002" green="0.96374408290000002" blue="0.96374408290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sortByLastRead:" destination="om2-Rs-wVj" eventType="touchUpInside" id="aZO-28-cca"/>
+                                            <action selector="sortByLastRead:" destination="iIA-FN-hVi" eventType="touchUpInside" id="oAa-nH-gj3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lUe-4I-m7Y" firstAttribute="top" secondItem="vQu-Bp-SmN" secondAttribute="top" constant="5" id="69B-em-Chq"/>
-                                    <constraint firstItem="lUe-4I-m7Y" firstAttribute="leading" secondItem="vQu-Bp-SmN" secondAttribute="leading" constant="15" id="CmR-cY-WrL"/>
+                                    <constraint firstItem="10X-Ye-b1e" firstAttribute="top" secondItem="vQu-Bp-SmN" secondAttribute="top" id="2hK-Wa-5BO"/>
                                     <constraint firstAttribute="height" constant="33" id="L0U-uA-hOQ"/>
-                                    <constraint firstItem="gSc-N7-Fd7" firstAttribute="top" secondItem="vQu-Bp-SmN" secondAttribute="top" constant="6" id="V1U-Gp-V4N"/>
-                                    <constraint firstAttribute="trailing" secondItem="gSc-N7-Fd7" secondAttribute="trailing" id="gJG-Dg-hym"/>
+                                    <constraint firstItem="axR-dl-UuY" firstAttribute="top" secondItem="vQu-Bp-SmN" secondAttribute="top" id="VOu-GK-2ZF"/>
+                                    <constraint firstAttribute="trailing" secondItem="axR-dl-UuY" secondAttribute="trailing" id="YgY-7I-e0k"/>
+                                    <constraint firstItem="10X-Ye-b1e" firstAttribute="leading" secondItem="vQu-Bp-SmN" secondAttribute="leading" constant="15" id="ue8-Lr-FFN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -135,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xhy-KW-Knb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iIA-FN-hVi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="320.80000000000001" y="-60.719640179910051"/>
         </scene>

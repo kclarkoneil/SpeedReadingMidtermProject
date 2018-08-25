@@ -133,4 +133,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     ReadingMaterialTableView.reloadData()
   }
+  
+  // Mark: IBAction functions
+  
+  @IBAction func sortByTitle(_ sender: Any) {
+     currentMaterial = currentMaterial.sorted(by: { $0.title < $1.title })
+    ReadingMaterialTableView.reloadData()
+  }
+  
+  @IBAction func sortByLastRead(_ sender: Any) {
+    currentMaterial = currentMaterial.sorted(by: {
+      guard let lastReadDate0 = $0.lastReadDate, let lastReadDate1 = $1.lastReadDate else{
+        return false
+      }
+      return lastReadDate0 < lastReadDate1 })
+    ReadingMaterialTableView.reloadData()
+  }
 }
