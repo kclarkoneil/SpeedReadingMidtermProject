@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class TextViewController: UIViewController {
   var currentText = ReadingMaterial()
@@ -16,8 +17,9 @@ class TextViewController: UIViewController {
   @IBOutlet weak var TextTitleLabel: UILabel!
   @IBOutlet weak var TextBodyView: UITextView!
   @IBOutlet weak var FilterSlider: UISlider!
+  @IBOutlet weak var playButton: FABButton!
   
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
       
         // Do any additional setup after loading the view.
@@ -29,7 +31,7 @@ class TextViewController: UIViewController {
         self.FilterSlider.maximumValue = Float(self.commonWordFilter.count)
         self.FilterSlider.minimumValue = 0
         TextBodyView.attributedText = self.filterWords()
-        
+        playButton.image = Icon.cm.play
     }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -51,14 +53,14 @@ class TextViewController: UIViewController {
     
         var highlighted = false
         var newPositionIndex = 0
+        let originalPositionIndex = currentText.currentPosition
     
         let bodyText = NSMutableAttributedString()
         for (i, word) in currentText.wordArray.enumerated() {
           
           if !filter.contains(word){
-            newPositionIndex += 1
-            
-            if i >= currentText.currentPosition && !highlighted {
+
+            if i >= originalPositionIndex && !highlighted {
     
                 let myAttribute = [NSAttributedStringKey.backgroundColor: UIColor.yellow]
                 let highlightedWord = NSAttributedString (string: word, attributes: myAttribute)
@@ -71,6 +73,8 @@ class TextViewController: UIViewController {
               bodyText.append(attributedWord)
             }
             bodyText.append(NSAttributedString (string: " "))
+            newPositionIndex += 1
+            
           }
         }
   
