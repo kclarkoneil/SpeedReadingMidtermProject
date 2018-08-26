@@ -24,81 +24,64 @@ class TextViewController: UIViewController {
         self.TextTitleLabel.text = self.currentText.title
         let filterWords = CommonWords()
         self.commonWordFilter = filterWords.commonWords as! [String]
-        
-        self.TextBodyView.text = self.currentText.body
+      
         
         self.FilterSlider.maximumValue = Float(self.commonWordFilter.count)
         self.FilterSlider.minimumValue = 0
+        TextBodyView.attributedText = self.filterWords()
         
     }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    TextBodyView.attributedText = self.filterWords()
+  }
 
   
-    func adjustFilter(sliderValue: Float) -> [String] {
+    func adjustFilter() -> [String] {
         var outputArray = [String]()
-        let J:Int = Int(sliderValue)
+        let J:Int = Int(FilterSlider.value)
         for i in 0..<J {
             outputArray.append(self.commonWordFilter[i])
         }
         return outputArray
     }
 
-  func filterWords(arrayA: [String], arrayB: [String]) -> [String] {
-        var outputArray = [String]()
-        var shouldAdd:Bool = true
-        
-        var newPositionIndex = self.currentText.currentPosition
-        
-        for inputString in arrayA {
+  func filterWords() -> NSMutableAttributedString {
+        let filter = adjustFilter()
+    
+        var highlighted = false
+        var newPositionIndex = 0
+    
+        let bodyText = NSMutableAttributedString()
+        for (i, word) in currentText.wordArray.enumerated() {
+          
+          if !filter.contains(word){
+            newPositionIndex += 1
             
-            shouldAdd = true
-            for filterString in arrayB {
-                
-                let currentWord = self.currentText.wordArray[newPositionIndex]
-                
-                if (inputString == filterString) {
-                    shouldAdd = false
-                    
-                    if (inputString == currentWord) {
-                        let oldPositionIndex = self.currentText.wordArray.index(of: currentWord)
-                        guard let positionIndex = oldPositionIndex else {
-                            break
-                        }
-                        
-                        newPositionIndex = positionIndex - 1
-                        break
-                    }
-                }
+            if i >= currentText.currentPosition && !highlighted {
+    
+                let myAttribute = [NSAttributedStringKey.backgroundColor: UIColor.yellow]
+                let highlightedWord = NSAttributedString (string: word, attributes: myAttribute)
+                bodyText.append(highlightedWord)
+                highlighted = true
+                currentText.setNewCurrentPostion(newPosition: newPositionIndex)
             }
-            if shouldAdd == true {
-                outputArray.append(inputString)
+            else {
+              let attributedWord = NSAttributedString (string: (word))
+              bodyText.append(attributedWord)
             }
+            bodyText.append(NSAttributedString (string: " "))
+          }
         }
-        self.currentText.setNewCurrentPostion(newPosition: newPositionIndex)
-        return outputArray
+  
+        return bodyText
     }
 
   // Mark: IBActions
   
   @IBAction func AdjustSlide(_ sender: UISlider) {
-    let adjustedFilter:Array = adjustFilter (sliderValue: FilterSlider.value)
-    let outputArray = filterWords(arrayA: self.currentText.wordArray, arrayB: adjustedFilter)
-    let bodyText = NSMutableAttributedString()
-    for (i, word) in outputArray.enumerated() {
-      
-        bodyText.append(NSAttributedString (string: " "))
-        
-        if i == currentText.currentPosition {
-            
-            let myAttribute = [NSAttributedStringKey.backgroundColor: UIColor.yellow]
-            let highlightedWord = NSAttributedString (string: word, attributes: myAttribute)
-            bodyText.append(highlightedWord)
-        }
-        else {
-          let attributedWord = NSAttributedString (string: (word))
-          bodyText.append(attributedWord)
-        }
-    }
-    self.TextBodyView.attributedText = bodyText
+
+    self.TextBodyView.attributedText = filterWords()
   }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

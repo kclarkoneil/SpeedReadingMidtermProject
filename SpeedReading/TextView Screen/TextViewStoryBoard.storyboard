@@ -36,7 +36,7 @@
                                     <segue destination="l5o-jw-uEi" kind="show" identifier="ReadingViewSegue" id="Vye-v4-a1I"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-sC-WZz">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-sC-WZz">
                                 <rect key="frame" x="62" y="625" width="251" height="31"/>
                                 <connections>
                                     <action selector="AdjustSlide:" destination="6WF-kk-Qk3" eventType="valueChanged" id="ezl-BT-XfD"/>
