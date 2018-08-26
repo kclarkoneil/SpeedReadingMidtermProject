@@ -76,6 +76,7 @@ class ImportViewController: UIViewController {
         
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "pdf url"
+            textField.keyboardType = UIKeyboardType.URL
         })
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
