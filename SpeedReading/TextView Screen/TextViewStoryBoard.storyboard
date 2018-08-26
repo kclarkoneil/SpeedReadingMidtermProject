@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6WF-kk-Qk3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text View Controller-->
+        <scene sceneID="1Hy-pr-b0w">
+            <objects>
+                <viewController id="6WF-kk-Qk3" customClass="TextViewController" customModule="SpeedReading" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aeL-aJ-zG9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q0r-0Y-HXg">
+                                <rect key="frame" x="0.0" y="61" width="375" height="511"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EN-vx-f2N" userLabel="PLAY">
+                                <rect key="frame" x="140" y="580" width="96" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="h2y-Ts-GqO"/>
+                                </constraints>
+                                <state key="normal" image="cm_play_white">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="l5o-jw-uEi" kind="show" identifier="ReadingViewSegue" id="Vye-v4-a1I"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-sC-WZz">
+                                <rect key="frame" x="62" y="625" width="251" height="31"/>
+                                <connections>
+                                    <action selector="AdjustSlide:" destination="6WF-kk-Qk3" eventType="valueChanged" id="ezl-BT-XfD"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TItle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ8-5p-fG5">
+                                <rect key="frame" x="171" y="32" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q0r-0Y-HXg" firstAttribute="trailing" secondItem="cQG-sc-DxM" secondAttribute="trailing" id="0rn-cJ-IHa"/>
+                            <constraint firstItem="cQG-sc-DxM" firstAttribute="bottom" secondItem="g2G-sC-WZz" secondAttribute="bottom" constant="12" id="3Qo-iy-ByC"/>
+                            <constraint firstItem="9EN-vx-f2N" firstAttribute="top" secondItem="Q0r-0Y-HXg" secondAttribute="bottom" constant="8" id="DIO-vg-aZI"/>
+                            <constraint firstItem="Q0r-0Y-HXg" firstAttribute="top" secondItem="jZ8-5p-fG5" secondAttribute="bottom" constant="8" id="INH-wT-Ubu"/>
+                            <constraint firstItem="9EN-vx-f2N" firstAttribute="centerX" secondItem="Q0r-0Y-HXg" secondAttribute="centerX" id="Q5z-t0-yv0"/>
+                            <constraint firstItem="g2G-sC-WZz" firstAttribute="top" secondItem="9EN-vx-f2N" secondAttribute="bottom" constant="12" id="bOJ-tJ-2Hp"/>
+                            <constraint firstItem="9EN-vx-f2N" firstAttribute="centerX" secondItem="g2G-sC-WZz" secondAttribute="centerX" id="eO0-NH-9rM"/>
+                            <constraint firstItem="jZ8-5p-fG5" firstAttribute="top" secondItem="cQG-sc-DxM" secondAttribute="top" constant="12" id="g7K-QQ-Wqh"/>
+                            <constraint firstItem="cQG-sc-DxM" firstAttribute="trailing" secondItem="g2G-sC-WZz" secondAttribute="trailing" constant="64" id="hXf-GQ-uOL"/>
+                            <constraint firstItem="Q0r-0Y-HXg" firstAttribute="leading" secondItem="cQG-sc-DxM" secondAttribute="leading" id="jsd-64-Ohp"/>
+                            <constraint firstItem="g2G-sC-WZz" firstAttribute="centerX" secondItem="cQG-sc-DxM" secondAttribute="centerX" id="k7S-Lc-rLn"/>
+                            <constraint firstItem="cQG-sc-DxM" firstAttribute="trailing" secondItem="9EN-vx-f2N" secondAttribute="trailing" constant="139" id="l6c-xN-688"/>
+                            <constraint firstItem="9EN-vx-f2N" firstAttribute="leading" secondItem="cQG-sc-DxM" secondAttribute="leading" constant="140" id="sn0-ab-QB0"/>
+                            <constraint firstItem="9EN-vx-f2N" firstAttribute="centerX" secondItem="jZ8-5p-fG5" secondAttribute="centerX" id="sxU-Mx-b4W"/>
+                            <constraint firstItem="g2G-sC-WZz" firstAttribute="leading" secondItem="cQG-sc-DxM" secondAttribute="leading" constant="64" id="tGc-Ln-Rbg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cQG-sc-DxM"/>
+                    </view>
+                    <connections>
+                        <outlet property="FilterSlider" destination="g2G-sC-WZz" id="rh5-q3-Dga"/>
+                        <outlet property="PlayButtonSegueController" destination="9EN-vx-f2N" id="PEE-qb-aTp"/>
+                        <outlet property="TextBodyView" destination="Q0r-0Y-HXg" id="53H-6I-diD"/>
+                        <outlet property="TextTitleLabel" destination="jZ8-5p-fG5" id="vB8-oI-69Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKQ-Oo-chx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="121.88905547226388"/>
+        </scene>
+        <!--ReadingStoryboard-->
+        <scene sceneID="owl-5c-qgw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReadingStoryboard" id="l5o-jw-uEi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFX-ZJ-mwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cm_play_white" width="24" height="24"/>
+    </resources>
+</document>

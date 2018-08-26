@@ -46,9 +46,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKa-Xx-RPm">
-                                                    <rect key="frame" x="280" y="10" width="95" height="19.5"/>
+                                                    <rect key="frame" x="265" y="10" width="110" height="19.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="95" id="UuL-ZP-EfH"/>
+                                                        <constraint firstAttribute="width" constant="110" id="UuL-ZP-EfH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -92,9 +92,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axR-dl-UuY" customClass="FlatButton" customModule="Material">
-                                        <rect key="frame" x="275" y="0.0" width="100" height="34"/>
+                                        <rect key="frame" x="245" y="0.0" width="130" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="kzN-P1-KFl"/>
+                                            <constraint firstAttribute="width" constant="130" id="kzN-P1-KFl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Last Read">

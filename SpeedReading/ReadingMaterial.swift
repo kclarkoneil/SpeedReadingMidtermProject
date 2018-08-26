@@ -37,35 +37,40 @@ class ReadingMaterial: Object {
     
     func nextWord() -> () {
         
-        guard currentPosition >= wordArray.count - 1 else {
-            
+        if currentPosition >= wordArray.count - 1 {
             do {
                 let realm = try Realm()
                 try realm.write {
-                    currentPosition += 1
+                    currentPosition = 0
                 }
+            }
+            catch {
+                print ("error encountered")
+            }
+            return
+        }
+        else {
+            do {
+                let realm = try Realm()
                 try realm.write {
-                   lastReadDate = Date()
-              }
+                    
+                    currentPosition += 1
+                    
+                }
             }
             catch{
                 print("Error encountered")
             }
             return
         }
-        
-        
     }
     func setNewCurrentPostion(newPosition: Int) -> (){
         
         do {
             let realm = try Realm()
             try realm.write {
-              currentPosition = newPosition
+                currentPosition = newPosition
             }
-          try realm.write {
-            lastReadDate = Date()
-          }
         }
         catch {
             print("error")

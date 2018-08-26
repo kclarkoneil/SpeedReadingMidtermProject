@@ -33,7 +33,7 @@ class TextViewController: UIViewController {
     }
 
   
-    func adjustFilter(sliderValue: Float) -> Array<String> {
+    func adjustFilter(sliderValue: Float) -> [String] {
         var outputArray = [String]()
         let J:Int = Int(sliderValue)
         for i in 0..<J {
@@ -42,12 +42,11 @@ class TextViewController: UIViewController {
         return outputArray
     }
 
-    func filterWords(arrayA: Array<String>, arrayB: Array<String>) -> Array<String> {
+  func filterWords(arrayA: [String], arrayB: [String]) -> [String] {
         var outputArray = [String]()
         var shouldAdd:Bool = true
         
         var newPositionIndex = self.currentText.currentPosition
-        
         
         for inputString in arrayA {
             
@@ -72,8 +71,6 @@ class TextViewController: UIViewController {
             }
             if shouldAdd == true {
                 outputArray.append(inputString)
-                
-                
             }
         }
         self.currentText.setNewCurrentPostion(newPosition: newPositionIndex)
@@ -85,33 +82,25 @@ class TextViewController: UIViewController {
   @IBAction func AdjustSlide(_ sender: UISlider) {
     let adjustedFilter:Array = adjustFilter (sliderValue: FilterSlider.value)
     let outputArray = filterWords(arrayA: self.currentText.wordArray, arrayB: adjustedFilter)
-    var bodyText = NSMutableAttributedString()
+    let bodyText = NSMutableAttributedString()
     for (i, word) in outputArray.enumerated() {
+      
+        bodyText.append(NSAttributedString (string: " "))
         
-        let space = NSAttributedString (string: " ")
-        bodyText.append(space)
-        
-        if i == self.currentText.currentPosition {
+        if i == currentText.currentPosition {
             
             let myAttribute = [NSAttributedStringKey.backgroundColor: UIColor.yellow]
             let highlightedWord = NSAttributedString (string: word, attributes: myAttribute)
             bodyText.append(highlightedWord)
-            
         }
         else {
-        
-        
- 
-        let attributedWord = NSAttributedString (string: (word))
-        bodyText.append(attributedWord)
+          let attributedWord = NSAttributedString (string: (word))
+          bodyText.append(attributedWord)
         }
-        
-            
-
     }
     self.TextBodyView.attributedText = bodyText
-    
   }
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ReadingViewSegue"{

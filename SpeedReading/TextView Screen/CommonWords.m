@@ -18,11 +18,7 @@
         NSArray *myArray = [[NSArray alloc] init];
         myArray = [words componentsSeparatedByString:@" "];
         _commonWords = myArray;
-        
-//        NSString *testWords = @" stop them from attempting to emulate the academic tone of the great encyclopedias of the past as they describe a large mammalian species from the Star Wars universe that shares a common ancestor with the Wookies? It does not. The result? Some really terrible Wikipedia writing. For the past two years, we have collected this writing on our blog, [Citation Needed]. Fascinated and delighted by the brilliantly bad writing we encountered in our Wikipedia browsing, we set out to curate The Best of Wikipedia’s Worst  Writing. Starting the blog was a no-brainer; our only concern was whether, after a few months of our daily mining, the well of awful Wikipedia writing would eventually run dry. By the time you read this, we will have published our thousandth entry. We started a podcast. Instead of drying up, the ocean of ineptitude has proven far more vast than we ever could have imagined. Through our own browsing, and with the help of a dedicated group of readers who are exploring the topics they submit for God knows what reason, we’ve continually lowered and re-lowered the bar for bad Wikipedia writing. Now, let’s get one thing straight: we love each and every entry written in this book. If you are one of the authors who have chosen to use your valuable time on this planet to write straight-faced exegeses on the subject of forgotten action figures from the seventies, we hope you don’t take offense.And if you do, we have an acceptable retort prepared for";
-//        NSArray *myTestArray = [[NSArray alloc] init];
-//        myTestArray = [testWords componentsSeparatedByString:@" "];
-//        _testInput = myTestArray;
+
 
     }
     return self;
