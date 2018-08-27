@@ -23,9 +23,10 @@ class ImportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.isErrorRevealed = false
+        titleTextField.placeholderAnimation = .hidden
 
         // Do any additional setup after loading the view.
-      readingTextView.becomeFirstResponder()
+      titleTextField.becomeFirstResponder()
       
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
     }
@@ -105,7 +106,7 @@ class ImportViewController: UIViewController {
     }
   
     @IBAction func saveReadingMaterials(_ sender: Any) {
-        if let title = titleTextField.text {
+        if let title = titleTextField.text, title != "" {
             reading = ReadingMaterial(title: title,
                                           body: readingTextView.text)
             if let delegate = delegate, let reading = reading{
@@ -114,10 +115,8 @@ class ImportViewController: UIViewController {
           self.dismiss(animated: true, completion: nil)
         }
         else{
-            titleTextField.detail = "Error: input title"
             titleTextField.isErrorRevealed = true
         }
     }
-    
-
+  
 }

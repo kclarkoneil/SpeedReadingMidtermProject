@@ -21,7 +21,15 @@ extension ImportViewController: TextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //(textField as? ErrorTextField)?.isErrorRevealed = true
+      guard let textField = textField as? ErrorTextField else{
+        return false
+      }
+      if textField.text == "" {
+          textField.isErrorRevealed = true
+      }
+      else{
+          textField.isErrorRevealed = false
+      }
         return true
     }
 }
