@@ -58,7 +58,7 @@ class TextViewController: UIViewController {
         let bodyText = NSMutableAttributedString()
         for (i, word) in currentText.wordArray.enumerated() {
           
-          if !filter.contains(word){
+          if !filter.contains(word.lowercased()){
 
             if i >= originalPositionIndex && !highlighted {
     

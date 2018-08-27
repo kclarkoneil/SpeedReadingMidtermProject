@@ -27,7 +27,7 @@ class ReadingMaterial: Object {
   
   
     func rebuildWordArray(){
-        let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,"))
+        let filteredString = body.filterCharacters(inCharacterSet: CharacterSet.init(charactersIn: ".,-[]"))
         wordArray = filteredString.components(separatedBy: " ")
     }
     
@@ -57,6 +57,11 @@ class ReadingMaterial: Object {
                     currentPosition += 1
                     
                 }
+              try realm.write {
+                
+                lastReadDate = Date()
+                
+              }
             }
             catch{
                 print("Error encountered")

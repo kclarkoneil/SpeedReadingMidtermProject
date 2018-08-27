@@ -38,6 +38,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    ReadingMaterialTableView.reloadData()
+  }
   
   func setupSampleData() {
     
