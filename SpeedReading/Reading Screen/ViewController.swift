@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         reading = false
         self.WPMDisplay.text = "WPM: \(self.settings.WPM)"
